@@ -1,9 +1,9 @@
 const Hero = () => {
     return (
-        <div className="w-11/12 mx-auto rounded-2xl my-8">
+        <div className="md:w-11/12 w-10/12 mx-auto rounded-2xl my-8">
             <div className="relative text-white">
                 <div className="h-[400px] relative">
-                    <img src="../../src/assets/banner.jpg" alt="Banner" className="rounded-2xl w-full h-full object-cover" />
+                    <img src="https://t4.ftcdn.net/jpg/03/08/69/75/360_F_308697506_9dsBYHXm9FwuW0qcEqimAEXUvzTwfzwe.jpg" alt="Banner" className="rounded-2xl w-full h-full object-cover" />
                     <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 rounded-2xl"></div>
                 </div>
                 <div className="absolute md:top-[25%] lg:left-[30%] top-[20%] left-[2%] md:left-[18%] text-center">

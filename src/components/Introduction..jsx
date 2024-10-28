@@ -1,6 +1,6 @@
 const Introduction = () => {
     return (
-        <div className="w-11/12 mx-auto my-3 ">
+        <div className="md:w-11/12 w-10/12 mx-auto my-3 ">
             <h1 className="font-extrabold md:text-4xl text-3xl text-center mb-6 drop-shadow-lg">
                 Introduction
             </h1>
@@ -22,7 +22,7 @@ const Introduction = () => {
                 {/* Image */}
                 <div className=" lg:order-2 order-1">
                     <img
-                        src="../../src/assets/ai.jpg" // Replace with your image path
+                        src="https://www.newhorizons.com/Portals/2/EasyDNNNews/1071/images/freepik-export-20240903013137yEgI-1200-628-c-L-97.jpeg" 
                         alt="Cpi IT Club"
                         className="rounded-2xl w-full h-auto object-cover shadow-lg"
                     />

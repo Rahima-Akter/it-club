@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-const Navbar = () => {
-    const [isOpen, setIsOpen] = useState(false); // State to manage dropdown visibility
+const Navbar = ({ setCurrentTab }) => {
+    const [isOpen, setIsOpen] = useState(false);
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
@@ -24,14 +24,14 @@ const Navbar = () => {
 
                 {/* Menu Items (Desktop) */}
                 <div className={`hidden lg:flex space-x-8`}>
-                    <a href="#" className="text-gray-300 hover:text-white">Home</a>
-                    <a href="#" className="text-gray-300 hover:text-white">About Us</a>
-                    <a href="#" className="text-gray-300 hover:text-white">Events</a>
-                    <a href="#" className="text-gray-300 hover:text-white">Blog</a>
-                    <a href="#" className="text-gray-300 hover:text-white">Notice</a>
-                    <a href="#" className="text-gray-300 hover:text-white">Projects</a>
-                    <a href="#" className="text-gray-300 hover:text-white">Join Us</a>
-                    <a href="#" className="text-gray-300 hover:text-white">Contact Us</a>
+                    <a href="#home" onClick={() => setCurrentTab('home')} className="text-gray-300 hover:text-white">Home</a>
+                    <a href="#about" onClick={() => setCurrentTab('about')} className="text-gray-300 hover:text-white">About Us</a>
+                    <a href="#events" onClick={() => setCurrentTab('events')} className="text-gray-300 hover:text-white">Events</a>
+                    <a href="#blogs" onClick={() => setCurrentTab('blogs')} className="text-gray-300 hover:text-white">Blog</a>
+                    <a href="#notice" className="text-gray-300 hover:text-white">Notice</a>
+                    <a href="#projects" onClick={() => setCurrentTab('projects')} className="text-gray-300 hover:text-white">Projects</a>
+                    <a href="#join" className="text-gray-300 hover:text-white">Join Us</a>
+                    <a href="#contact" className="text-gray-300 hover:text-white">Contact Us</a>
                 </div>
 
                 {/* User Icon (Visible only on larger screens) */}
@@ -42,34 +42,33 @@ const Navbar = () => {
 
             {/* Dropdown for mobile */}
             <div className={`lg:hidden ${isOpen ? 'block' : 'hidden'} transition-all duration-300 ease-in-out`}>
-                <div className="absolute right-0 mt-5 w-48 bg-gray-800 rounded-lg shadow-lg m-2 z-10"> {/* Added m-2 for margin */}
+                <div className="absolute right-0 mt-5 w-48 bg-gray-800 rounded-lg shadow-lg m-2 z-20">
                     <ul className="flex flex-col space-y-2 p-4">
                         <li>
-                            <a href="#" className="text-gray-300 hover:text-white">Home</a>
+                            <a href="#home" onClick={() => setCurrentTab('home')} className="text-gray-300 hover:text-white">Home</a>
                         </li>
                         <li>
-                            <a href="#" className="text-gray-300 hover:text-white">About Us</a>
+                            <a href="#about" onClick={() => setCurrentTab('about')} className="text-gray-300 hover:text-white">About Us</a>
                         </li>
                         <li>
-                            <a href="#" className="text-gray-300 hover:text-white">Events</a>
+                            <a href="#events" onClick={() => setCurrentTab('events')} className="text-gray-300 hover:text-white">Events</a>
                         </li>
                         <li>
-                            <a href="#" className="text-gray-300 hover:text-white">Blog/News</a>
+                            <a href="#blogs" onClick={() => setCurrentTab('blogs')} className="text-gray-300 hover:text-white">Blog</a>
                         </li>
                         <li>
-                            <a href="#" className="text-gray-300 hover:text-white">Notice</a>
+                            <a href="#notice" className="text-gray-300 hover:text-white">Notice</a>
                         </li>
                         <li>
-                            <a href="#" className="text-gray-300 hover:text-white">Projects</a>
+                            <a href="#projects" onClick={() => setCurrentTab('projects')} className="text-gray-300 hover:text-white">Projects</a>
                         </li>
                         <li>
-                            <a href="#" className="text-gray-300 hover:text-white">Join Us</a>
+                            <a href="#join" className="text-gray-300 hover:text-white">Join Us</a>
                         </li>
                         <li>
-                            <a href="#" className="text-gray-300 hover:text-white">Contact Us</a>
+                            <a href="#contact" className="text-gray-300 hover:text-white">Contact Us</a>
                         </li>
                         <li>
-                            {/* User Icon in dropdown */}
                             <div className="text-gray-300 hover:text-white">
                                 <i className="fa-solid fa-user"></i>
                             </div>

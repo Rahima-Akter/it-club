@@ -35,8 +35,8 @@ const MemberHighlights = () => {
     ];
 
     return (
-        <div className="w-11/12 mx-auto my-8">
-            <h2 className="font-extrabold md:text-4xl text-3xl text-center mb-6 drop-shadow-lg">Member Highlights</h2>
+        <div className="md:w-11/12 w-10/12 mx-auto my-8">
+            <h2 className="font-extrabold md:text-4xl text-3xl text-center my-8 drop-shadow-lg">Member Highlights</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 {members.map((member) => (
                     <div
