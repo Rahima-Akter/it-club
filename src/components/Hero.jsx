@@ -13,7 +13,7 @@ const Hero = () => {
                             A club where students can explore, research, invent their own technologies. 
                             Where students can compete among themselves while learning with each other.
                         </p>
-                        <button className="btn btn-primary">Explore</button>
+                        <button className="btn md:px-10 font-bold border-none bg-gradient-to-r from-pink-400 to-blue-700 text-white">Explore</button>
                     </div>
                 </div>
             </div>

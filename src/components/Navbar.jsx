@@ -1,7 +1,13 @@
 import { useState } from "react";
+import LoginForm from "./LoginForm";
 
 const Navbar = ({ setCurrentTab }) => {
     const [isOpen, setIsOpen] = useState(false);
+    const [userLogin, setUserLogin] = useState(false)
+
+    const userLoginForm = () => {
+        setUserLogin(!userLogin)
+    }
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
@@ -10,9 +16,8 @@ const Navbar = ({ setCurrentTab }) => {
     return (
         <nav className="bg-gray-800 p-4">
             <div className="container mx-auto flex justify-between py-1 items-center">
-                {/* Logo */}
-                <div className="text-white text-xl font-bold">
-                    It Club
+                <div className="text-white text-xl font-bold flex justify-center items-center">
+                <img src="https://i.ibb.co.com/cCd4Brf/it-club-removebg-preview.png" alt="" className="md:w-14 w-10 rounded-full"/>It Club
                 </div>
 
                 {/* Mobile Menu Button */}
@@ -28,17 +33,20 @@ const Navbar = ({ setCurrentTab }) => {
                     <a href="#about" onClick={() => setCurrentTab('about')} className="text-gray-300 hover:text-white">About Us</a>
                     <a href="#events" onClick={() => setCurrentTab('events')} className="text-gray-300 hover:text-white">Events</a>
                     <a href="#blogs" onClick={() => setCurrentTab('blogs')} className="text-gray-300 hover:text-white">Blog</a>
-                    <a href="#notice" className="text-gray-300 hover:text-white">Notice</a>
+                    <a href="#notice" onClick={() => setCurrentTab('notice')} className="text-gray-300 hover:text-white">Notice</a>
                     <a href="#projects" onClick={() => setCurrentTab('projects')} className="text-gray-300 hover:text-white">Projects</a>
-                    <a href="#join" className="text-gray-300 hover:text-white">Join Us</a>
-                    <a href="#contact" className="text-gray-300 hover:text-white">Contact Us</a>
+                    <a href="#join" onClick={() => setCurrentTab('join')} className="text-gray-300 hover:text-white">Join Us</a>
+                    <a href="#contact" onClick={() => setCurrentTab('contact')} className="text-gray-300 hover:text-white">Contact Us</a>
                 </div>
 
                 {/* User Icon (Visible only on larger screens) */}
-                <div className="hidden lg:block text-white">
+                <div onClick={userLoginForm} className="hidden lg:block text-white cursor-pointer">
                     <i className="fa-solid fa-user"></i>
                 </div>
+
             </div>
+
+            {userLogin && <LoginForm onClose={userLoginForm}></LoginForm>}
 
             {/* Dropdown for mobile */}
             <div className={`lg:hidden ${isOpen ? 'block' : 'hidden'} transition-all duration-300 ease-in-out`}>
@@ -57,19 +65,19 @@ const Navbar = ({ setCurrentTab }) => {
                             <a href="#blogs" onClick={() => setCurrentTab('blogs')} className="text-gray-300 hover:text-white">Blog</a>
                         </li>
                         <li>
-                            <a href="#notice" className="text-gray-300 hover:text-white">Notice</a>
+                            <a href="#notice" onClick={() => setCurrentTab('notice')} className="text-gray-300 hover:text-white">Notice</a>
                         </li>
                         <li>
                             <a href="#projects" onClick={() => setCurrentTab('projects')} className="text-gray-300 hover:text-white">Projects</a>
                         </li>
                         <li>
-                            <a href="#join" className="text-gray-300 hover:text-white">Join Us</a>
+                            <a href="#join" onClick={() => setCurrentTab('join')} className="text-gray-300 hover:text-white">Join Us</a>
                         </li>
                         <li>
-                            <a href="#contact" className="text-gray-300 hover:text-white">Contact Us</a>
+                            <a href="#contact" onClick={() => setCurrentTab('contact')} className="text-gray-300 hover:text-white">Contact Us</a>
                         </li>
                         <li>
-                            <div className="text-gray-300 hover:text-white">
+                            <div onClick={userLoginForm} className="text-gray-300 hover:text-white cursor-pointer">
                                 <i className="fa-solid fa-user"></i>
                             </div>
                         </li>
